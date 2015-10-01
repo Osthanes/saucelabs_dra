@@ -64,6 +64,10 @@ function execute {
     
     if [ "${DRA}" == true ]; then
         #insert DRA commands here
+        npm install grunt
+        npm install grunt-cli
+        npm install grunt-idra
+        grunt --gruntfile=node_modules/grunt-idra/idra.js -eventType=SaucelabFvtTest -file=job_data_collection.json
     fi
     
     mv job_data_collection.json ${ARCHIVE_DIR}

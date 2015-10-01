@@ -1,5 +1,5 @@
 {
-    "id": "ibm.devops.services.pipeline.saucelabs",
+    "id": "ibm.devops.services.pipeline.saucelabs_dra",
     "version": 1,
     "name_key": "ExtName",
     "desc_key": "ExtDesc",
@@ -140,6 +140,10 @@ function custom_cmd {
 
     if [ \"${DRA}\" == true ]; then
         #insert DRA commands here
+        npm install grunt
+        npm install grunt-cli
+        npm install grunt-idra
+        grunt --gruntfile=node_modules/grunt-idra/idra.js -eventType=SaucelabFvtTest -file=job_data_collection.json
     fi
     
     mv job_data_collection.json ${ARCHIVE_DIR}
