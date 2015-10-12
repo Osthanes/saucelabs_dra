@@ -67,7 +67,7 @@ function execute {
         npm install grunt
         npm install grunt-cli
         npm install grunt-idra
-        grunt --gruntfile=node_modules/grunt-idra/idra.js -eventType=SaucelabFvtTest -file=job_data_collection.json -deployAnalyticsServer=http://da-test.oneibmcloud.com
+        grunt --gruntfile=node_modules/grunt-idra/idra.js -eventType=SaucelabFvtTest -file=job_data_collection.json -deployAnalyticsServer="$DA_SERVER"
     fi
     
     mv job_data_collection.json ${ARCHIVE_DIR}
